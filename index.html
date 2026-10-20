@@ -24,7 +24,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/favicon/rosetta-favicon.ico">
     <link rel="apple-touch-icon" href="./assets/favicon/rosetta-favicon.png">
 
-    <link rel="stylesheet" href="./css/main.css?v=23">
+    <link rel="stylesheet" href="./css/main.css?v=45">
     <link rel="stylesheet" href="./css/lightbox.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,7 @@
         media="print" onload="this.media='all'">
 
     <script src="./js/vendor/lightbox-plus-jquery.js" defer></script>
-    <script src="./js/main.js?v=23" defer></script>
+    <script src="./js/main.js?v=45" defer></script>
 
 </head>
 
@@ -48,7 +48,7 @@
                 <img id="logo" src="./assets/images/rosetta-icon.svg" alt="Rosetta Icon" />
             </a>
 
-            <button id="nav-toggle">
+            <button id="nav-toggle" aria-label="Toggle Navigation">
                 <img class="hamburger-icon" src="./assets/images/hamburger-icon.svg" alt="Menu icon" />
                 <img class="close-icon" src="./assets/images/close-icon.svg" alt="Close menu icon" />
             </button>
@@ -60,8 +60,13 @@
                     <li><a href="#private-events">Private Events</a></li>
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#mercatino">Mercatino</a></li>
-                    <li><a href="#map-location">Contact</a></li>
-                    <li><a href="#wine-club">Wine Club</a></li>
+                    <li><a href="#map-location">Location</a></li>
+
+                    <li class="nav-social-group">
+                        <a href="#instagram-feed"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/p/Fiaschetteria-Rosetta-Srl-61588535985185/" target="_blank"
+                            rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -78,81 +83,90 @@
 
             <div class="hero-container">
                 <div class="hero-image">
-                    <img src="./assets/images/rosettarest-logo.svg" alt="Digital Marketing Illustration">
+                    <img src="./assets/images/rosettarest-logo.svg" alt="Fiaschetteria Rosetta Restorante Logo">
                 </div>
             </div>
         </section>
 
-
         <section id="about-us" class="about-section">
-
             <div class="txt-content">
-                <!-- <h2 id="dyn-about-h2">Fiaschetteria Rosetta</h2> -->
-                <h3 id="dyn-about-h3">Brooklin, Ontario.</h3>
-                <!-- <p id="dyn-about-p"></p> -->
-            </div>
+                <h3 id="dyn-about-h3">Authentic Italian restaurant in Brooklin, Ontario.</h3>
+                <a href="#menu" class="green-btn">View Menu</a>
+                <!-- Your updated button link -->
+                <a href="tel:9055561603" class="white-btn phone-click-action">Reserve Table</a>
+
+                <!-- The Phone Number Pop-Up Modal Container (Place right before </body>) -->
+                <div id="phone-modal" class="phone-modal-overlay" aria-hidden="true">
+                    <div class="phone-modal-content">
+                        <button class="close-phone-modal" id="close-phone-modal"
+                            aria-label="Close modal">&times;</button>
+                        <div class="phone-modal-inner">
+                            <h3>Call to Reserve</h3>
+                            <p>To secure your table or arrange an event, please call us directly at:</p>
+                            <a href="tel:9055561603" class="phone-display-link">(905) 556-1603</a>
+                            <p class="phone-modal-subtext">Click the number above or dial manually.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="gallery" class="gallery-section">
+            <div class="txt-content">
+                <h2>Dalla Nostra Cucina</h2>
+            </div>
+
             <div class="gallery-container">
-
-                <!-- <div class="txt-content">
-                    <h2 id="dyn-gallery-h2">Gallery</h2>
-                    <p id="dyn-gallery-p">Browse through a visual
-                        taste of our from-scratch dishes.
-                    </p>
-                    <a href="#" class="green-btn">View More</a>
-                </div> -->
-
-                <div class="gallery-grid-wrapper">
-                    <div class="gallery-grid">
-
-                        <a href="./assets/images/rosetta-gallery-img1.jpg" data-lightbox="gallery-series"
+                <!-- Horizontal Scrollable Thumbnail Strip -->
+                <div class="gallery-slider-wrapper">
+                    <div class="gallery-slider">
+                        <a href="./assets/images/rosetta-gallery-img7.jpg" class="slider-thumb active"
+                            data-lightbox="gallery-series"
+                            data-title="Burratina — Tomato sauce, fresh mozzarella, burrata, basil, EVOO">
+                            <img src="./assets/images/rosetta-gallery-img7.jpg" alt="Burratina Pizza" />
+                        </a>
+                        <a href="./assets/images/rosetta-gallery-img2.jpg" class="slider-thumb"
+                            data-lightbox="gallery-series"
+                            data-title="Tagliere — Parma Prosciutto, Mortadella, Cheeses">
+                            <img src="./assets/images/rosetta-gallery-img2.jpg" alt="Tagliere Platter" />
+                        </a>
+                        <a href="./assets/images/rosetta-gallery-img3.jpg" class="slider-thumb"
+                            data-lightbox="gallery-series" data-title="Primi Pasta — Fusilli Tri-Colori">
+                            <img src="./assets/images/rosetta-gallery-img3.jpg" alt="Primi Pasta" />
+                        </a>
+                        <a href="./assets/images/rosetta-gallery-img4.jpg" class="slider-thumb"
+                            data-lightbox="gallery-series" data-title="Funghi Trifolati">
+                            <img src="./assets/images/rosetta-gallery-img4.jpg" alt="Funghi Trifolati" />
+                        </a>
+                        <a href="./assets/images/rosetta-gallery-img5.jpg" class="slider-thumb"
+                            data-lightbox="gallery-series" data-title="Patatina Roasted Potatoes">
+                            <img src="./assets/images/rosetta-gallery-img5.jpg" alt="Patatina Roasted Potatoes" />
+                        </a>
+                        <a href="./assets/images/rosetta-gallery-img1.jpg" class="slider-thumb"
+                            data-lightbox="gallery-series"
                             data-title="Margherita — Tomato Sauce, Fresh Mozzarella, Basil">
-                            <img src="./assets/images/rosetta-gallery-img1.jpg" class="" />
-                        </a>
-                        <a href="./assets/images/rosetta-gallery-img2.jpg" data-lightbox="gallery-series" data-title="Tagliere — Parma Prosciutto, Leoncini Mortadella, Cacciatore Sausage,
-                            Parmigiano Reggiano, Auricchio, Fontina, Taralli, Olives">
-                            <img src="./assets/images/rosetta-gallery-img2.jpg" class="" />
-                        </a>
-                        <a href="./assets/images/rosetta-gallery-img3.jpg" data-lightbox="gallery-series"
-                            data-title="Marinara — Fusilli Tri-Colori, Tomato Sauce, Basil, Pecorino Romano">
-                            <img src="./assets/images/rosetta-gallery-img3.jpg" class="" />
-                        </a>
-                        <a href="./assets/images/rosetta-gallery-img4.jpg" data-lightbox="gallery-series" data-title="Funghi Trifolati — Arugula, Rosetta Dressing, Oyster Mushrooms, Garlic,
-                            Parsley, Breadcrumbs, Parmigiano Reggiano, White Wine">
-                            <img src="./assets/images/rosetta-gallery-img4.jpg" class="" />
-                        </a>
-                        <a href="./assets/images/rosetta-gallery-img5.jpg" data-lightbox="gallery-series"
-                            data-title="Patatina — Roasted Potatoes, Fontina Cheese">
-                            <img src="./assets/images/rosetta-gallery-img5.jpg" class="" />
-                        </a>
-                        <a href="./assets/images/rosetta-gallery-6.jpg" data-lightbox="gallery-series"
-                            data-title="Image 6">
-                            <img src="./assets/images/rosetta-gallery-6.jpg" class="" />
-                        </a>
-                        <a href="./assets/images/rosetta-gallery-7.jpg" data-lightbox="gallery-series"
-                            data-title="Image 7">
-                            <img src="./assets/images/rosetta-gallery-7.jpg" class="" />
-                        </a>
-                        <a href="./assets/images/rosetta-gallery-8.jpg" data-lightbox="gallery-series"
-                            data-title="Image 8">
-                            <img src="./assets/images/rosetta-gallery-8.jpg" class="" />
-                        </a>
-                        <a href="./assets/images/rosetta-gallery-9.jpg" data-lightbox="gallery-series"
-                            data-title="Image 9">
-                            <img src="./assets/images/rosetta-gallery-9.jpg" class="" />
+                            <img src="./assets/images/rosetta-gallery-img1.jpg" alt="Margherita Pizza" />
                         </a>
                     </div>
                 </div>
+
+                <!-- Large Featured Image View Area Below -->
+                <div class="gallery-main-viewport">
+                    <img id="gallery-featured-img" src="./assets/images/rosetta-gallery-img7.jpg"
+                        alt="Featured selection view" />
+                    <div class="selection-counter-badge">
+                        <i class="fa-solid fa-fire-flame-curved"></i> <span id="selection-count-text">Burratina
+                            Pizza</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <section id="private-events" class="double-section">
             <div class="double-container">
                 <div class="txt-content">
-                    <h2 id="dyn-private-h2">Private Events</h2>
+                    <h2>Private Events</h2>
                     <p id="dyn-private-p">Celebrate life's milestones with an authentic taste of Italy.</p>
                     <a href="#map-location" class="green-btn">Book Now</a>
                 </div>
@@ -168,10 +182,10 @@
 
         <section id="menu" class="menu-section">
             <div class="menu-shell">
-                <header class="menu-header">
+                <div class="menu-header">
                     <h2>Menu</h2>
-                    <p>Text-based menu so you can copy, paste, and add items easily.</p>
-                </header>
+
+                </div>
 
                 <nav class="menu-nav">
                     <a class="menu-tab active" href="#menu-antipasti" data-target="menu-antipasti">Antipasti</a>
@@ -186,322 +200,573 @@
                     <a class="menu-tab" href="#menu-wine" data-target="menu-wine">Wine</a>
                 </nav>
 
+                <!-- Antipasti Section -->
                 <div class="menu-category active" id="menu-antipasti">
-                    <h3>Antipasti</h3>
+                    <h3>Antipasti | Appetizers</h3>
                     <ul class="menu-list">
+                        <!-- UPDATE: Updated Pane e Oli description and price -->
                         <li class="menu-line">
-                            <span class="item-title">Tagliere</span>
-                            <span class="item-desc">Parma Prosciutto, Leoncini Mortadella, cacciatore sausage,
-                                Parmigiano Reggiano, Auricchio, Fontina, taralli, olives with pits</span>
+                            <span class="item-title">Pane e Oli — $12</span>
+                            <span class="item-desc">Italian bread, aged balsamic in EVOO, house made hot peppers in
+                                EVOO, pistachio basil pesto. <strong class="menu-note">(V)</strong></span>
+                        </li>
+                        <!-- UPDATE: Split Tagliere into Salumi and Formaggi options -->
+                        <li class="menu-line">
+                            <span class="item-title">Tagliere di Salumi (serves 2) — $28</span>
+                            <span class="item-desc">Parma Prosciutto, Leoncini Mortadella, sweet and hot cacciatore
+                                sausage, sun dried black olives with pits, Castelveltrano Olives with pits, taralli.
+                                <strong class="menu-note">(GF- omit taralli)</strong></span>
                         </li>
                         <li class="menu-line">
-                            <span class="item-title">Carpaccio di Manzo</span>
-                            <span class="item-desc">Beef tenderloin, evoo, lemon, capers, arugula, shaved Parmigiano
-                                Reggiano</span>
+                            <span class="item-title">Tagliere di Formaggi (serves 2) — $28</span>
+                            <span class="item-desc">Parmigiano Reggiano, Auricchio cheese, Fontina cheese, burrata, sun
+                                dried black olives with pits, Castelveltrano Olives with pits, taralli, hot pepper paste
+                                in honey. <strong class="menu-note">(GF- omit taralli)</strong></span>
                         </li>
                         <li class="menu-line">
-                            <span class="item-title">Arrosticini</span>
-                            <span class="item-desc">Grilled mini lamb kabobs, parsley and mint gremolata</span>
+                            <span class="item-title">Carpaccio di Manzo — $20</span>
+                            <span class="item-desc">Thinly sliced raw beef, EVOO, arugula, shaved Parmigiano Reggiano,
+                                lemon. <strong class="menu-note">(GF)</strong></span>
+                        </li>
+                        <!-- UPDATE: Updated Arrosticini description and price -->
+                        <li class="menu-line">
+                            <span class="item-title">Arrosticini — $20</span>
+                            <span class="item-desc">Grilled mini lamb kabobs (6pc), parsley and mint gremolata,
+                                crostino. <strong class="menu-note">(GF omit crostino)</strong></span>
                         </li>
                         <li class="menu-line">
-                            <span class="item-title">Gamberoni Arrabbiate</span>
-                            <span class="item-desc">Jumbo shrimp in a spicy tomato sauce (3pc)</span>
+                            <span class="item-title">Bocconcini Bombe — $14</span>
+                            <span class="item-desc">Breaded and fried bocconcini (6pc), spicy tomato sauce.</span>
+                        </li>
+                        <!-- UPDATE: Updated Crostino description and price -->
+                        <li class="menu-line">
+                            <span class="item-title">Crostino — $14</span>
+                            <span class="item-desc">Grilled Italian bread, pistachio pesto, Leoncini mortadella, burrata
+                                cheese, EVOO (1pc).</span>
                         </li>
                         <li class="menu-line">
-                            <span class="item-title">Bocconcini Bombe</span>
-                            <span class="item-desc">Breaded and fried bocconcini, side spicy tomato sauce (6pc)</span>
+                            <span class="item-title">Suppli al Telefono — $12</span>
+                            <span class="item-desc">Breaded fried tomato basil sauce rice balls, fresh mozzarella,
+                                marinara sauce (2pc).</span>
                         </li>
+                        <!-- UPDATE: Added new Pasta e Fagioli appetizer -->
                         <li class="menu-line">
-                            <span class="item-title">Crostino</span>
-                            <span class="item-desc">Bruschetta tomatoes, shaved Parmigiano Reggiano (1pc)</span>
-                        </li>
-                        <li class="menu-line">
-                            <span class="item-title">Suppli al Telefono</span>
-                            <span class="item-desc">Breaded fried rice balls, fresh mozzarella, side marinara sauce
-                                (2pc)</span>
+                            <span class="item-title">Pasta e Fagioli — $12</span>
+                            <span class="item-desc">Hearty tomato soup with Romano Beans and pasta. <strong
+                                    class="menu-note">(V)</strong></span>
                         </li>
                     </ul>
                 </div>
 
+                <!-- Insalate Section -->
                 <div class="menu-category" id="menu-insalate">
-                    <h3>Insalate</h3>
+                    <h3>Insalate | Salads</h3>
                     <ul class="menu-list">
+                        <!-- UPDATE: Updated Olyvia price to $18 -->
                         <li class="menu-line">
-                            <span class="item-title">Olyvia</span>
+                            <span class="item-title">Olyvia — $18</span>
                             <span class="item-desc">Arugula, oven roasted cherry tomatoes, Burrata, shaved Parmigiano
-                                Reggiano, citrus dressing, balsamic reduction</span>
+                                Reggiano, citrus dressing, balsamic reduction. <strong
+                                    class="menu-note">(GF)</strong></span>
                         </li>
                         <li class="menu-line">
-                            <span class="item-title">Funghi Trifolati</span>
+                            <span class="item-title">Funghi Trifolati — $16</span>
                             <span class="item-desc">Arugula, Rosetta dressing, oyster mushrooms, garlic, parsley,
-                                breadcrumbs, Parmigiano Reggiano, white wine</span>
+                                breadcrumbs, Parmigiano Reggiano, white wine.</span>
                         </li>
                         <li class="menu-line">
-                            <span class="item-title">Mariella</span>
+                            <span class="item-title">Mariella — $17</span>
                             <span class="item-desc">Arugula, fresh pear, Parma prosciutto, shaved Parmigiano Reggiano,
-                                citrus dressing</span>
+                                citrus dressing. <strong class="menu-note">(GF)</strong></span>
                         </li>
+                        <!-- UPDATE: Added new Barbabietole e Agrumi salad -->
                         <li class="menu-line">
-                            <span class="item-title">Finocchio</span>
-                            <span class="item-desc">Shaved fennel, arugula, radicchio, fresh orange, citrus dressing</span>
+                            <span class="item-title">Barbabietole e Agrumi — $17</span>
+                            <span class="item-desc">Pickled beets, shaved fennel, fresh orange, citrus dressing, toasted
+                                pinenuts. <strong class="menu-note">(GF) (V)</strong></span>
+                        </li>
+                        <!-- UPDATE: Updated Insalatona Rosetta price to $12 -->
+                        <li class="menu-line">
+                            <span class="item-title">Insalata Rosetta — $12</span>
+                            <span class="item-desc">Arugula, endive, radicchio, honey balsamic vinaigrette. <strong
+                                    class="menu-note">(GF) (V)</strong></span>
                         </li>
                     </ul>
-                    <p class="menu-note">Add Protein: Grilled 6oz chicken breast | Grilled 8oz striploin | Hemp heart
-                        seed encrusted ahi tuna | Pan seared jumbo prawns 2pc - 4pc</p>
+                    <p class="menu-note" style="margin-top: 4rem; font-weight: bold;">Add Protein:</p>
+                    <!-- UPDATE: Updated add protein options -->
+                    <p class="menu-note">Grilled 6oz Chicken Breast $13 (GF) | Pan seared Jumbo Prawns 2pc $12 - 4pc $24
+                        (GF)</p>
                 </div>
 
+                <!-- Primi Pasta Section -->
                 <div class="menu-category" id="menu-primi">
-                    <h3>Primi Pasta</h3>
+                    <h3>Primi Pasta | Fresh Pasta Portions</h3>
+                    <p class="menu-note" style="margin-bottom: 1.5rem; font-weight: 500;">
+                        <!-- UPDATE: Updated Primi subheader notes -->
+                        DOUBLE IT UP, just ask your server!<br>
+                        Scarpetta $3 to clean up all that lovely sauce! | House made hot peppers in EVOO $3
+                    </p>
                     <ul class="menu-list">
+                        <!-- UPDATE: Updated Gricia pricing to $18 / $32 -->
                         <li class="menu-line">
-                            <span class="item-title">Gricia</span>
-                            <span class="item-desc">Spaghetti alla chitarra, guanciale, Pecorino Romano, black pepper</span>
+                            <span class="item-title">Gricia — $18 / $32</span>
+                            <span class="item-desc">Spaghetti alla chitarra, crispy guanciale, Pecorino Romano, black
+                                pepper.</span>
                         </li>
                         <li class="menu-line">
-                            <span class="item-title">Carbonara</span>
-                            <span class="item-desc">Spaghetti alla chitarra, guanciale, Pecorino Romano, black pepper,
-                                egg yolk</span>
+                            <span class="item-title">Carbonara — $20 / $36</span>
+                            <span class="item-desc">Spaghetti alla chitarra, crispy guanciale, Pecorino Romano, black
+                                pepper, egg yolk.</span>
                         </li>
+                        <!-- UPDATE: Updated Amatriciana pasta type and pricing to $22 / $38 -->
                         <li class="menu-line">
-                            <span class="item-title">Amatriciana</span>
-                            <span class="item-desc">Rigatoni, guanciale, Pecorino Romano, tomato basil sauce</span>
+                            <span class="item-title">Amatriciana — $22 / $38</span>
+                            <span class="item-desc">Bucatini, crispy guanciale, Pecorino Romano, black pepper, tomato
+                                basil sauce.</span>
                         </li>
+                        <!-- UPDATE: Replaced Bolognese with Gnocchi al Ragu -->
                         <li class="menu-line">
-                            <span class="item-title">Bolognese</span>
-                            <span class="item-desc">Rigatoni, tomato basil meat sauce, shaved Parmigiano Reggiano</span>
+                            <span class="item-title">Gnocchi al Ragu — $24 / $44</span>
+                            <span class="item-desc">Potato gnocchi, slow simmered meat sauce, Pecorino romano.</span>
                         </li>
+                        <!-- UPDATE: Replaced Marinara pasta with Selvaggia update (orecchiette) -->
                         <li class="menu-line">
-                            <span class="item-title">Marinara</span>
-                            <span class="item-desc">Fusilli tri-colori, tomato sauce, basil, Pecorino Romano</span>
+                            <span class="item-title">Selvaggia — $24 / $44</span>
+                            <span class="item-desc">Orecchiette, boar sausage, garlic rapini, oven roasted cherry
+                                tomatoes, shaved Parmigiano Reggiano, EVOO.</span>
                         </li>
+                        <!-- UPDATE: Updated Mezzanotte pricing to $18 / $32 -->
                         <li class="menu-line">
-                            <span class="item-title">Selvaggia</span>
-                            <span class="item-desc">Mafalda corta, boar sausage, rapini, oven roasted cherry tomatoes,
-                                shaved Parmigiano Reggiano</span>
+                            <span class="item-title">Mezzanotte — $18 / $32</span>
+                            <span class="item-desc">Spaghetti alla chitarra, house made anchovy paste, garlic confit,
+                                house made hot peppers, EVOO, Pecorino Romano.</span>
                         </li>
+                        <!-- UPDATE: Added new Frutti di Mare pasta dish -->
                         <li class="menu-line">
-                            <span class="item-title">Mezzanotte</span>
-                            <span class="item-desc">Spaghetti alla chitarra, aglio, olio e peperoncino, anchovy paste,
-                                Pecorino Romano</span>
+                            <span class="item-title">Frutti di Mare — $35 / $66</span>
+                            <span class="item-desc">Linguine, shrimp, scallops, calamari, oven roasted cherry tomato,
+                                garlic confit, white wine, EVOO.</span>
                         </li>
                     </ul>
                 </div>
 
+                <!-- Secondi Section -->
                 <div class="menu-category" id="menu-secondi">
-                    <h3>Secondi</h3>
+                    <h3>Secondi | Mains</h3>
+                    <!-- UPDATE: Added note about choosing side dish -->
+                    <p class="menu-note" style="margin-bottom: 1.5rem;">Please choose your side dish below.</p>
                     <ul class="menu-list">
+                        <!-- UPDATE: Replaced Pollo San Daniele with Pollo alla Ciociara -->
                         <li class="menu-line">
-                            <span class="item-title">Pollo San Daniele</span>
-                            <span class="item-desc">6oz chicken breast, fresh sage, Parma Prosciutto wrapped</span>
+                            <span class="item-title">Pollo alla Ciociara — $26</span>
+                            <span class="item-desc">Slow roasted chicken quarter, garlic, oil, herbs, white wine,
+                                crushed tomato, bell pepper. <strong class="menu-note">(GF)</strong></span>
+                        </li>
+                        <!-- UPDATE: Replaced Vitello alla Brace with Osso Buco alla Romana -->
+                        <li class="menu-line">
+                            <span class="item-title">Osso Buco alla Romana — $38</span>
+                            <span class="item-desc">Braised veal shank, white wine, stock, aromatic vegetables, crushed
+                                tomato, served with sweet peas.</span>
+                        </li>
+                        <!-- UPDATE: Updated Costolette price to $46 -->
+                        <li class="menu-line">
+                            <span class="item-title">Costolette — $46</span>
+                            <span class="item-desc">3 Ontario French cut lamb chops, grilled, mint gremolata. <strong
+                                    class="menu-note">(GF)</strong></span>
+                        </li>
+                        <!-- UPDATE: Updated Merluzzo price to $25 -->
+                        <li class="menu-line">
+                            <span class="item-title">Merluzzo — $25</span>
+                            <span class="item-desc">Oven baked 7oz wild cod, oven roasted cherry tomatoes, olives with
+                                pits, shallots, white wine, lemon. <strong class="menu-note">(GF)</strong></span>
+                        </li>
+                        <!-- UPDATE: Updated Grilled Calamari price and description -->
+                        <li class="menu-line">
+                            <span class="item-title">Grilled Calamari — $24</span>
+                            <span class="item-desc">(3 pieces) sun dried tomato, Kalamata olives, roasted pepper
+                                marinade, lemon. <strong class="menu-note">(GF)</strong></span>
                         </li>
                         <li class="menu-line">
-                            <span class="item-title">Vitello alla Brace</span>
-                            <span class="item-desc">Marinated grilled veal cutlets, lemon</span>
+                            <span class="item-title">Grilled Beef Tenderloin Steak — $55</span>
+                            <span class="item-desc">8oz aged beef tenderloin, gremolata, lemon. <em
+                                    class="menu-note">(Limited quantities)</em> <strong
+                                    class="menu-note">(GF)</strong></span>
                         </li>
+                        <!-- UPDATE: Added new Frutti di Mare 'mbriacati main -->
                         <li class="menu-line">
-                            <span class="item-title">Costolette</span>
-                            <span class="item-desc">3 Ontario French cut lamb chops, mint gremolata</span>
-                        </li>
-                        <li class="menu-line">
-                            <span class="item-title">Merluzzo</span>
-                            <span class="item-desc">7oz wild cod, tomato, olives with pits, onions, lemon</span>
-                        </li>
-                        <li class="menu-line">
-                            <span class="item-title">Grilled Calamari</span>
-                            <span class="item-desc">Sundried tomato, Kalamata olive, roasted pepper</span>
+                            <span class="item-title">Frutti di Mare ‘mbriacati — $28</span>
+                            <span class="item-desc">Shrimp, scallops, calamari, pan seared, sambuca, EVOO, garlic
+                                confit. <strong class="menu-note">(GF)</strong></span>
                         </li>
                     </ul>
                 </div>
 
+                <!-- Contorni Section -->
                 <div class="menu-category" id="menu-contorni">
-                    <h3>Contorni</h3>
-                    <p class="menu-note">Garlic Rapini | Piselli e Pancetta | Patate Arrosto | Funghi Trifolati |
-                        Insalata Rosetta</p>
+                    <h3>Contorni | Sides</h3>
+                    <ul class="menu-list">
+                        <li class="menu-line">
+                            <span class="item-title">Spicy Garlic Rapini — $8</span>
+                            <span class="item-desc"><strong class="menu-note">(GF)(V)</strong></span>
+                        </li>
+                        <li class="menu-line">
+                            <span class="item-title">Piselli e Pancetta — $8</span>
+                            <span class="item-desc">Sweet peas, crispy pancetta, EVOO, garlic, shallots, white wine.
+                                <strong class="menu-note">(GF)</strong></span>
+                        </li>
+                        <li class="menu-line">
+                            <span class="item-title">Patate Arrosto — $8</span>
+                            <span class="item-desc">Oven roasted rosemary potatoes. <strong
+                                    class="menu-note">(GF)(V)</strong></span>
+                        </li>
+                        <!-- UPDATE: Added new Radicchio alla Griglia side -->
+                        <li class="menu-line">
+                            <span class="item-title">Radicchio alla Griglia — $8</span>
+                            <span class="item-desc">Charred radicchio, citrus dressing, grilled orange. <strong
+                                    class="menu-note">(GF) (V)</strong></span>
+                        </li>
+                        <li class="menu-line">
+                            <span class="item-title">Insalata Rosetta — $8</span>
+                            <span class="item-desc">Arugula, endive, radicchio, honey balsamic vinaigrette. <strong
+                                    class="menu-note">(GF)(V)</strong></span>
+                        </li>
+                    </ul>
                 </div>
 
+                <!-- Pizza Rosso Section -->
                 <div class="menu-category" id="menu-rosso">
-                    <h3>Pizza Tonda Romana in Rosso</h3>
+                    <h3>Pizza Tonda Romana <br>in Rosso | Tomato Sauce Base</h3>
+                    <p class="menu-note" style="margin-bottom: 1.5rem;">14" Thin Crust Crispy Roman Style Pizza. <br>Our
+                        mozzarella is premium Fior Di Latte.</p>
                     <ul class="menu-list">
+                        <!-- UPDATE: Updated Margherita description and price ($18) -->
                         <li class="menu-line">
-                            <span class="item-title">Marinara</span>
-                            <span class="item-desc">Tomato sauce, anchovy paste, oregano, garlic, basil</span>
+                            <span class="item-title">Margherita — $18</span>
+                            <span class="item-desc">Tomato sauce, fresh mozzarella, fresh basil.</span>
+                        </li>
+                        <!-- UPDATE: Added Prosciutto e Burratina pizza -->
+                        <li class="menu-line">
+                            <span class="item-title">Prosciutto e Burratina — $28</span>
+                            <span class="item-desc">Tomato sauce, fresh mozzarella, burratina, Parma Prosciutto,
+                                EVOO.</span>
                         </li>
                         <li class="menu-line">
-                            <span class="item-title">Margherita</span>
-                            <span class="item-desc">Tomato sauce, fresh mozzarella, basil</span>
+                            <span class="item-title">Diavola — $20</span>
+                            <span class="item-desc">Tomato sauce, fresh mozzarella, spicy salami, house made hot
+                                peppers, sun dried black olives with pits.</span>
                         </li>
                         <li class="menu-line">
-                            <span class="item-title">Burratina</span>
-                            <span class="item-desc">Tomato sauce, light mozzarella, burrata, basil, evoo</span>
+                            <span class="item-title">Capricciosa — $20</span>
+                            <span class="item-desc">Tomato sauce, fresh mozzarella, prosciutto cotto (cooked ham),
+                                sauteed mushrooms, sun dried black olives with pits, artichoke.</span>
+                        </li>
+                        <!-- UPDATE: Updated Quattro Stagioni note wording -->
+                        <li class="menu-line">
+                            <span class="item-title">Quattro Stagioni — $22</span>
+                            <span class="item-desc">Tomato sauce, fresh mozzarella, artichokes, marinated mushrooms, sun
+                                dried black olives with pits, Parma Prosciutto. <em class="menu-note">(one topping per
+                                    quarter, please ask your server if you would like the toppings spread evenly
+                                    throughout)</em></span>
                         </li>
                         <li class="menu-line">
-                            <span class="item-title">Diavola</span>
-                            <span class="item-desc">Tomato sauce, fresh mozzarella, spicy salami, hot peppers, olives
-                                with pits</span>
-                        </li>
-                        <li class="menu-line">
-                            <span class="item-title">Capricciosa</span>
-                            <span class="item-desc">Tomato sauce, fresh mozzarella, prosciutto cotto, mushrooms, olives
-                                with pits, artichoke</span>
-                        </li>
-                        <li class="menu-line">
-                            <span class="item-title">Quattro Stagioni</span>
-                            <span class="item-desc">Tomato sauce, fresh mozzarella, artichokes, mushrooms, olives with
-                                pits, Parma Prosciutto</span>
-                        </li>
-                        <li class="menu-line">
-                            <span class="item-title">Rosetta</span>
+                            <span class="item-title">Rosetta — $24</span>
                             <span class="item-desc">Tomato sauce, fresh mozzarella, arugula, Parma Prosciutto, shaved
-                                Parmigiano Reggiano, balsamic</span>
+                                Parmigiano Reggiano, balsamic drizzle.</span>
                         </li>
                     </ul>
                 </div>
 
+                <!-- Pizza Bianco Section -->
                 <div class="menu-category" id="menu-bianco">
-                    <h3>Pizza Tonda Romana in Bianco</h3>
+                    <h3>Pizza Tonda Romana <br>in Bianco | (No Tomato Sauce)</h3>
+                    <p class="menu-note" style="margin-bottom: 1.5rem;">14" Thin Crust Crispy Roman Style Pizza. <br>Our
+                        mozzarella is premium Fior Di Latte.</p>
+                    <ul class="menu-list">
+                        <!-- UPDATE: Updated Quattro Formaggi price to $22 -->
+                        <li class="menu-line">
+                            <span class="item-title">Quattro Formaggi — $22</span>
+                            <span class="item-desc">Fresh mozzarella, gorgonzola, Parmigiano Reggiano, Fontina,
+                                EVOO.</span>
+                        </li>
+                        <!-- UPDATE: Updated Boscaiola price to $22 -->
+                        <li class="menu-line">
+                            <span class="item-title">Boscaiola — $22</span>
+                            <span class="item-desc">Garlic infused EVOO, fresh mozzarella, marinated mushrooms, fresh
+                                parsley, garlic rapini, boar sausage.</span>
+                        </li>
+                        <!-- UPDATE: Updated Mortazza description and price to $22 -->
+                        <li class="menu-line">
+                            <span class="item-title">Mortazza — $22</span>
+                            <span class="item-desc">Pistachio basil pesto, fresh mozzarella, Leoncini Mortadella,
+                                burratina.</span>
+                        </li>
+                        <li class="menu-line">
+                            <span class="item-title">Santo Stefano — $24</span>
+                            <span class="item-desc">EVOO, fresh mozzarella, arugula, Parma Prosciutto, shaved Parmigiano
+                                Reggiano, balsamic drizzle.</span>
+                        </li>
+                        <li class="menu-line">
+                            <span class="item-title">Patatina — $17</span>
+                            <span class="item-desc">Roasted potatoes, garlic infused EVOO, Fontina cheese.</span>
+                        </li>
+                        <!-- UPDATE: Added new Da Re white pizza -->
+                        <li class="menu-line">
+                            <span class="item-title">Da Re — $28</span>
+                            <span class="item-desc">EVOO, candied figs, candied walnuts, fresh pear, light fresh
+                                mozzarella, light gorgonzola, honey drizzle, Parma Prosciutto.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Dolci Section -->
+                <div class="menu-category" id="menu-dolci">
+                    <h3>Dolci | Desserts</h3>
+                    <p class="menu-note" style="margin-bottom: 1.5rem;">Proudly made in house.</p>
                     <ul class="menu-list">
                         <li class="menu-line">
-                            <span class="item-title">Nicola</span>
-                            <span class="item-desc">Evoo, rosemary, cracked pepper</span>
+                            <span class="item-title">Tiramisu — $12</span>
+                            <span class="item-desc">Traditional house recipe.</span>
                         </li>
+                        <!-- UPDATE: Updated Panna Cotta description -->
                         <li class="menu-line">
-                            <span class="item-title">Quattro Formaggi</span>
-                            <span class="item-desc">Mozzarella, gorgonzola, Parmigiano Reggiano, Fontina, evoo</span>
+                            <span class="item-title">Panna Cotta — $12</span>
+                            <span class="item-desc">Strawberry raspberry coulis, mint.</span>
                         </li>
+                        <!-- UPDATE: Updated Chocolate Panna Cotta description -->
                         <li class="menu-line">
-                            <span class="item-title">Boscaiola</span>
-                            <span class="item-desc">Evoo, fresh mozzarella, mushrooms, parsley, garlic rapini, boar
-                                sausage</span>
+                            <span class="item-title">Chocolate Panna Cotta — $14</span>
+                            <span class="item-desc">Strawberry raspberry coulis, mint.</span>
                         </li>
+                        <!-- UPDATE: Updated Affogato description -->
                         <li class="menu-line">
-                            <span class="item-title">Mortazza</span>
-                            <span class="item-desc">Leoncini Mortadella, pistachio pesto, light mozzarella, burrata</span>
+                            <span class="item-title">Affogato — $12</span>
+                            <span class="item-desc">Vanilla gelato, espresso, almond biscotti.</span>
                         </li>
+                        <!-- UPDATE: Updated La Carolina description -->
                         <li class="menu-line">
-                            <span class="item-title">Santo Stefano</span>
-                            <span class="item-desc">Evoo, fresh mozzarella, arugula, Parma Prosciutto, Parmigiano,
-                                balsamic</span>
+                            <span class="item-title">La Carolina — $12</span>
+                            <span class="item-desc">Lemon sorbet, strawberry raspberry coulis, almond biscotti,
+                                mint.</span>
                         </li>
+                        <!-- UPDATE: Added Gelato options -->
                         <li class="menu-line">
-                            <span class="item-title">Patatina</span>
-                            <span class="item-desc">Roasted potatoes, evoo, Fontina cheese</span>
+                            <span class="item-title">Gelato — $9 (1 scoop) / $16 (2 scoops)</span>
+                            <span class="item-desc">Our authentic and delicious gelatos and sorbets: Sicilian Pistachio,
+                                Hazelnut, Crema Italiana, Chocolate, Rocher, Oreo, Biscoff, Sour Black Cherry Ripple,
+                                Lemon Sorbet.</span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="menu-category" id="menu-dolci">
-                    <h3>Dolci</h3>
-                    <p class="menu-note">Made in house</p>
-                    <p class="menu-note">Tiramisu | Panna cotta | Affogato</p>
-                </div>
-
+                <!-- Drinks Section -->
                 <div class="menu-category is-drinks" id="menu-drinks">
-                    <h3>Drinks</h3>
+                    <h3>Drinks & Cocktails</h3>
                     <div class="menu-grid">
                         <div class="menu-column">
-                            <h4>Cafe</h4>
-                            <p class="menu-note">Espresso | Espresso Corretto | Double Espresso | Espresso Macchiato |
-                                Cappuccino | Latte Macchiato | Americano | Double Americano</p>
+                            <h4>Café & Tea <small
+                                    style="font-size:0.75rem; font-style:italic; text-transform:none;">(**Decaf
+                                    available | **Oat milk available)</small></h4>
+                            <p class="menu-note">Espresso <strong>$3.50</strong> | Espresso Corretto (.5 oz
+                                grappa/sambuca) <strong>$8.50</strong> | Double Espresso <strong>$6</strong> | Espresso
+                                Macchiato <strong>$5</strong> | Cappuccino <strong>$6.50</strong> | Latte Macchiato
+                                <strong>$6.50</strong> | Americano <strong>$3.50</strong> | Double Americano
+                                <strong>$6</strong>
+                            </p>
+                            <p class="menu-note">Teas (English Breakfast | Mint | Earl Grey) <strong>$4.00</strong></p>
 
-                            <h4>Tea</h4>
-                            <p class="menu-note">English Breakfast | Earl Grey | Mint</p>
+                            <h4>Birra | Beers</h4>
+                            <p class="menu-note"><strong>5 Paddles Draft:</strong> Pint $12 / ½ Pint $7 <br><small>(Home
+                                    Sweet Home | Vagablonde | Nuevo)</small></p>
+                            <p class="menu-note"><strong>Banditos Draft:</strong> Pint $11 / ½ Pint $6</p>
+                            <!-- UPDATE: Updated Peroni options -->
+                            <p class="menu-note">Peroni (500ml can) <strong>$9.50</strong> | Perroni glass bottle
+                                <strong>$7.00</strong> | Peroni 0.0% bottle <strong>$7.00</strong> | Banditos (500ml
+                                can) <strong>$8.50</strong>
+                            </p>
 
-                            <h4>Birra</h4>
-                            <p class="menu-note">5 Paddles Draft Beer - Pint or 1/2 Pint</p>
-                            <p class="menu-note">Home Sweet Home | In Your Face | Vagablonde | Nuevo</p>
-                            <p class="menu-note">Peroni Bottle $8</p>
-
-                            <h4>Cocktails</h4>
-                            <p class="menu-note">Aperol Spritz | Limoncello Sprit | Hugo Spritz | Negroni | Espresso
-                                Martini | Margarita | Paper Plane</p>
-
-                            <h4>Mocktails</h4>
-                            <p class="menu-note">Cherry Limonata - amarena cherry, limonata</p>
-                            <p class="menu-note">Palomina - grapefruit juice, lime juice, blood orange soda</p>
-                            <p class="menu-note">NoGroni - la dolce vita negroni</p>
-                            <p class="menu-note">Bergamot Nojito - bergamot soda, fresh mint</p>
-                            <p class="menu-note">Rosa's Peach - peach puree, lemon juice, blood orange soda</p>
+                            <h4>Pop, Juices & Premium Waters</h4>
+                            <!-- UPDATE: Added Tap Water and updated water/soda/juice options -->
+                            <p class="menu-note">Tap Water <strong>$0</strong> | Filtered Flat Water
+                                <strong>$4.50</strong> | Filtered Sparkling Water <strong>$4.50</strong>
+                            </p>
+                            <p class="menu-note">La Dolce Vita Sodas (Bergamot | Negroni | Chinotto | Lemonade | Blood
+                                Orange) <strong>$6.00</strong></p>
+                            <p class="menu-note">Coke | Diet Coke | Coke Zero | Ginger Ale | Italian Bitter | Fuze Iced
+                                Tea | 7-up <strong>$3.00</strong></p>
+                            <p class="menu-note">Juices (Orange | Cranberry | Grapefruit | Peach Nectar)
+                                <strong>$3.50</strong>
+                            </p>
                         </div>
+
                         <div class="menu-column">
-                            <h4>Pop/Juice/Water</h4>
-                            <p class="menu-note">Filtered Sparkling Water (750mls) | La Dolce Vita Bergamot | La Dolce
-                                Vita Negroni | La Dolce Vita Lemonade | La Dolce Vita Blood Orange | Coke | Diet Coke |
-                                Coke Zero | Ginger Ale | Bitter | Juice: Orange | Cranberry | Grapefruit | Peach Nectar |
-                                Pear Nectar</p>
+                            <h4>Cocktails</h4>
+                            <!-- UPDATE: Added new cocktails -->
+                            <p class="menu-note">Amaretto Sunrise <strong>$14</strong> | Italian Hot Toddy
+                                <strong>$16</strong> | Tea Martini <strong>$16</strong> | Old Fashioned
+                                <strong>$18</strong> | Orangella Old Fashioned <strong>$16</strong> | “Bombardino”
+                                <strong>$16</strong>
+                            </p>
+                            <p class="menu-note">Aperol Spritz <strong>$14</strong> | Limoncello Spritz
+                                <strong>$14</strong> | Hugo Spritz <strong>$16</strong> | Maria Spritz
+                                <strong>$18</strong>
+                            </p>
+                            <p class="menu-note">Negroni <strong>$18</strong> | Espresso Martini <strong>$16</strong> |
+                                Margarita <strong>$16</strong> | Paper Plane <strong>$16</strong> | Mojito
+                                <strong>$16</strong>
+                            </p>
+                            <p class="menu-note">Rosetta Caesar <strong>$16</strong> | Rosa’s Sprtizer
+                                <strong>$16</strong>
+                            </p>
 
-                            <h4>Bar Rail</h4>
-                            <p class="menu-note">Stoli Vodka | Tanquerey Gin | Forty Creek Whiskey | Bacardi Rum |
-                                Tromba Blanco | Tromba Reposado | Grey Goose Vodka</p>
+                            <h4>Mocktails (Non-Alcoholic)</h4>
+                            <!-- UPDATE: Updated mocktail selection -->
+                            <p class="menu-note">Cherry Limonata <strong>$10</strong> | Palomina <strong>$8</strong> |
+                                NoGroni <strong>$6</strong> | Bergamot Nojito <strong>$8</strong> | Rosa’s Peach
+                                <strong>$8</strong> | Shirley Temple <strong>$8</strong>
+                            </p>
 
-                            <h4>Aperitivo/Digestivo</h4>
-                            <p class="menu-note">Aperol | Campari | Amaro Nonino | Vecchio Amaro del Cap | Averna |
-                                Siciliano | Amaro Lucano | Dolin Vermouth Sweet | Dolin Vermouth Dry | Limoncello</p>
-
-                            <h4>Liquore</h4>
-                            <p class="menu-note">Amaretto | Frangelico | Kahlua | St. Germain | Sambucca | Baileys |
-                                Cointreau | Chianti Grappa | Poli Grappa | Sandro Bottega Grappa | Grand Marnier</p>
+                            <h4>After Dinner Sippers / Spirits (1.5oz Pour)</h4>
+                            <!-- UPDATE: Updated after dinner sippers list and pricing -->
+                            <p class="menu-note">Grand Marnier | Kahlua | Baileys | Amaretto | Cointreau | Limoncello |
+                                Frangelico | Sambucca | Tromba Blanco | Vecchio Amaro del Capo | Averna Siciliano |
+                                Amaro Lucano | Sandro Bottega Grappa <strong>$8.00</strong></p>
+                            <p class="menu-note">John Sleeman Whisky <strong>$10.00</strong> | Toki Whisky | Casa Nobel
+                                Reposado | Amaro Nonino | Poli Grappa <strong>$12.00</strong></p>
+                            <p class="menu-note">Glenfiddich 12yr | Hennessy VS <strong>$14.00</strong> | Fernet-Branca
+                                <strong>$10.00</strong>
+                            </p>
                         </div>
                     </div>
                 </div>
 
+                <!-- Wine Section -->
                 <div class="menu-category is-wine" id="menu-wine">
-                    <h3>Wine</h3>
-                    <p class="menu-note">Wine is served by the 5oz glass - 9oz glass or bottle.</p>
+                    <h3>Wine Selection</h3>
+                    <p class="menu-note" style="margin-bottom: 1.5rem;">Wine is served by the 5oz glass, 9oz glass, or
+                        full bottle selection.</p>
                     <div class="menu-grid">
                         <div class="menu-column">
-                            <h4>White Wine</h4>
+                            <h4>White Wine <br><small
+                                    style="font-size:0.75rem; text-transform:none; opacity:0.7;">Format: 5oz | 9oz |
+                                    Bottle</small></h4>
+
                             <p class="menu-note"><strong>Abruzzo</strong></p>
-                            <p class="menu-note">2024 La Quercia Pecorino Superiore DOP "Santa Pupa"</p>
+                            <p class="menu-note">2024 La Quercia Pecorino Superiore DOP “Santa Pupa” — <strong>$15 | $24
+                                    | $60</strong></p>
+
                             <p class="menu-note"><strong>Campania</strong></p>
-                            <p class="menu-note">2024 Aia dei Colombi Falanghina</p>
+                            <p class="menu-note">2023 Feudi Di San Gregorio Greco Di Tufo DOCG — <strong>$17 | $26 |
+                                    $68</strong></p>
+                            <p class="menu-note">2024 Feudi Di San Gregorio Fiano Di Avellino DOCG — <strong>$17 | $26 |
+                                    $68</strong></p>
+                            <p class="menu-note">2024 Aia dei Colombi Falanghina — <strong>$15 | $24 | $60</strong></p>
+
                             <p class="menu-note"><strong>Emilia Romagna</strong></p>
-                            <p class="menu-note">2024 Poderi dal Nespoli Nespolino Trebbiano-Chardonnay</p>
+                            <p class="menu-note">2024 Poderi dal Nespoli Nespolino Trebbiano-Chardonnay — <strong>$12 |
+                                    $20 | $48</strong></p>
+
                             <p class="menu-note"><strong>Friuli-Venezia Giulia</strong></p>
-                            <p class="menu-note">2025 Di Lenardo Chardonnay</p>
-                            <p class="menu-note">2024 Villa San Martino, Pinot Grigio DOC (glass only)</p>
+                            <p class="menu-note">2025 Di Lenardo Chardonnay — <strong>$15 | $24 | $60</strong></p>
+                            <p class="menu-note">2024 Villa San Martino, Pinot Grigio DOC <small>(Glass Only)</small> —
+                                <strong>$14 | $23 | n/a</strong>
+                            </p>
+
                             <p class="menu-note"><strong>Lazio</strong></p>
-                            <p class="menu-note">2024 Casale Marchese Frascati Superiore</p>
-                            <p class="menu-note">2024 Le Poggere Biano Est! Est! Est! di Montefiascone</p>
+                            <p class="menu-note">2024 Casale Marchese Frascatti Superiore — <strong>$15 | $24 |
+                                    $60</strong></p>
+                            <p class="menu-note">2024 Le Poggere Biano Est! Est! Est! di Montefiascone — <strong>$14 |
+                                    $23 | $55</strong></p>
+
                             <p class="menu-note"><strong>Marche</strong></p>
-                            <p class="menu-note">2024 Umani Ronchi Pecorino</p>
+                            <p class="menu-note">2024 Umani Ronchi Pecorino — <strong>$14 | $23 | $55</strong></p>
+                            <p class="menu-note">2025 Gavi Del Comune Di Gavi DOCG — <strong>$16 | $25 | $65</strong>
+                            </p>
+
+                            <p class="menu-note"><strong>Umbria</strong></p>
+                            <p class="menu-note">Tenuta Decugnano Dei Barbi Orvieto Classico — <strong>$16 | $25 |
+                                    $65</strong></p>
+
                             <p class="menu-note"><strong>Veneto</strong></p>
-                            <p class="menu-note">2025 Luigi Righetti Pinot Grigio</p>
-                            <p class="menu-note">Casalotta Brut Spumante (Prosecco)</p>
+                            <p class="menu-note">2025 Luigi Righetti Pinot Grigio — <strong>$12 | $20 | $48</strong></p>
+                            <p class="menu-note">2024 Delibori Soave Classico — <strong>$12 | $20 | $48</strong></p>
+                            <p class="menu-note">2024 Villabella Verona Chiaretto Di Bardolino Rose — <strong>$16 | $25
+                                    | $65</strong></p>
+                            <p class="menu-note">Casalotta Brut Spumante (Prosecco) — <strong>$12 | $20 | $48</strong>
+                            </p>
+                            <p class="menu-note">Anno Domini Moscatto Frizzante — <strong>Bottle Only: $48</strong></p>
                         </div>
+
                         <div class="menu-column">
-                            <h4>Red Wine</h4>
-                            <p class="menu-note"><strong>Emilia Romagna</strong></p>
-                            <p class="menu-note">Cantina di Soliera Lambrusco di Sorbara</p>
-                            <p class="menu-note">2023 Poderi dal Nespoli Nespolino Sangiovese-Merlot</p>
-                            <p class="menu-note"><strong>Lazio</strong></p>
-                            <p class="menu-note">2024 Famiglia Cotarella/Montefiascone Vitiano Cabernet</p>
-                            <p class="menu-note"><strong>Marche</strong></p>
-                            <p class="menu-note">2023 Umani Ronchi San Lorenzo Montepulciano</p>
-                            <p class="menu-note"><strong>Piemonte</strong></p>
-                            <p class="menu-note">2023 Fenocchio Barbera d'Alba</p>
-                            <p class="menu-note"><strong>Puglia</strong></p>
-                            <p class="menu-note">2023 Rivera Rupicolo Castel del Monte Rosso DOC</p>
-                            <p class="menu-note">2023 Rivera Primitivo Salento IGT</p>
-                            <p class="menu-note"><strong>Sicilia</strong></p>
-                            <p class="menu-note">2023 Planeta La Segreta Nero D'Avola</p>
-                            <p class="menu-note"><strong>Tuscany</strong></p>
-                            <p class="menu-note">2022 Leonardo Da Vinci Chianti DOCG</p>
-                            <p class="menu-note">2019 Terre Natuzzi Chianti Riserva</p>
-                            <p class="menu-note">2024 Sinopie Chianti Superiore DOCG</p>
-                            <p class="menu-note">2024 Banfi Col di Sasso Cabernet Sauvignon, San Giovese (Californian
-                                like)</p>
-                            <p class="menu-note"><strong>Veneto</strong></p>
-                            <p class="menu-note">2024 Luigi Righetti Valpolicella Classico</p>
-                            <p class="menu-note">2022 Luigi Righetti Sognun Cabernet Sauvignon</p>
-                            <p class="menu-note">2023 Luigi Righetti Campiolieti Valpolicella</p>
-                            <p class="menu-note">2022 Luigi Righetti Amarone della Valpolicella Classico</p>
+                            <h4>Red Wine <br><small style="font-size:0.75rem; text-transform:none; opacity:0.7;">Format:
+                                    5oz | 9oz | Bottle</small></h4>
+
                             <p class="menu-note"><strong>Barolo</strong></p>
-                            <p class="menu-note">2022 Cantine Gigli Rosso Barbera d'Alba Superiore DOC</p>
+                            <p class="menu-note">2022 Cantine GiGi Rosso Barbera d’Alba Superiore DOC — <strong>$15 |
+                                    $24 | $60</strong></p>
+
+                            <p class="menu-note"><strong>Emilia Romagna</strong></p>
+                            <p class="menu-note">2023 Poderi dal Nespoli Nespolino Sangiovese-Merlot — <strong>$12 | $20
+                                    | $48</strong></p>
+                            <p class="menu-note">Cantina di Soliera Lambrusco di Sorbara — <strong>Bottle Only:
+                                    $50</strong></p>
+
+                            <p class="menu-note"><strong>Lazio</strong></p>
+                            <p class="menu-note">2024 Famiglia Cotarella/Montefiascone Vitiano Cabernet — <strong>$14 |
+                                    $23 | $55</strong></p>
+
+                            <p class="menu-note"><strong>Marche</strong></p>
+                            <p class="menu-note">2023 Umani Ronchi San Lorenzo Montepulciano — <strong>$16 | $25 |
+                                    $65</strong></p>
+
+                            <p class="menu-note"><strong>Piemonte</strong></p>
+                            <p class="menu-note">2024 Ca’Del Baio Dolcetto D’Alba Lodoi — <strong>$16 | $25 |
+                                    $65</strong></p>
+                            <p class="menu-note">2023 Fenochio Barbera d’Alba — <strong>Bottle Only: $80</strong></p>
+
+                            <p class="menu-note"><strong>Puglia</strong></p>
+                            <p class="menu-note">2023 Rivera Primitivo Salento IGT — <strong>$12 | $20 | $48</strong>
+                            </p>
+                            <p class="menu-note">2023 Rivera Rupicolo Castel del Monte Rosso DOC — <strong>$14 | $23 |
+                                    $55</strong></p>
+
+                            <p class="menu-note"><strong>Sicilia</strong></p>
+                            <p class="menu-note">2023 Planeta La Segreta Nero D’Avola — <strong>$16 | $25 | $65</strong>
+                            </p>
+
+                            <p class="menu-note"><strong>Tuscany</strong></p>
+                            <p class="menu-note">2022 Leonardo Da Vinci Chianti DOCG — <strong>$12 | $20 | $48</strong>
+                            </p>
+                            <p class="menu-note">2019 Terre Natuzzi Chianti Riserva — <strong>$14 | $23 | $55</strong>
+                            </p>
+                            <p class="menu-note">2024 Sinopie Chianti Superiore DOCG — <strong>$14 | $23 | $55</strong>
+                            </p>
+                            <p class="menu-note">2024 Banfi Col di Sasso Cabernet Sauvignon, San Giovese — <strong>$13 |
+                                    $21 | $50</strong></p>
+
+                            <p class="menu-note"><strong>Veneto</strong></p>
+                            <p class="menu-note">2024 Luigi Righetti Valpolicella Classico — <strong>$13 | $21 |
+                                    $50</strong></p>
+                            <p class="menu-note">2022 Luigi Righetti Sognum Cabernet Sauvignon — <strong>$15 | $24 |
+                                    $60</strong></p>
+                            <p class="menu-note">2023 Luigi Righetti Campolieti Valpolicella — <strong>$16 | $25 |
+                                    $65</strong></p>
+                            <p class="menu-note">2022 Luigi Righetti Amarone della Valpolicella Classico —
+                                <strong>Bottle Only: $100</strong>
+                            </p>
                         </div>
                     </div>
+                </div>
+                <div class="dietary-legend-bar">
+                    <span class="legend-badge"><strong>GF</strong> Gluten Free</span>
+                    <span class="legend-badge"><strong>EVOO</strong> Extra Virgin Olive Oil</span>
+                    <span class="legend-badge"><strong>V</strong> Vegan</span>
+                    <span class="legend-badge"><strong>Scarpetta / Crostini</strong> Lightly Grilled Italian
+                        Bread</span>
                 </div>
             </div>
+
         </section>
+
         <section id="mercatino" class="double-section">
             <div class="double-container">
                 <div class="txt-content">
@@ -510,104 +775,82 @@
                     <a href="#map-location" class="green-btn">Catering</a>
                 </div>
                 <div class="double-image-wrapper">
-                    <img src="./assets/images/rosetta-mercatino-img.jpg" alt="outside of market"
-                        class="double-feature-img">
+                    <img src="./assets/images/rosetta-mercatino-img.jpg"
+                        alt="Specialty selection shelf outside of our Italian market block" class="double-feature-img">
                 </div>
             </div>
         </section>
 
         <section id="map-location" class="map-section">
-
             <div class="contact-grid">
-                <div class="contact-column">
+                <div class="contact-column hours-column">
                     <h3 id="dyn-map-connect-h3">Connect</h3>
                     <p id="dyn-map-connect-p">(905) 556-1603</p>
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/fiaschetteriarosetta/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/p/Fiaschetteria-Rosetta-Srl-61588535985185/"><i
-                                class="fab fa-facebook"></i></a>
-                    </div>
+                    <p id="dyn-map-connect-p">info@fiaschetteriarosetta.com</p>
                 </div>
-                <div class="contact-column">
-                    <h3 id="dyn-map-location-h3">Location</h3>
-                    <p id="dyn-map-location-p">72 Baldwin Street<br>Brooklin, Ontario</p>
-                </div>
-                <div class="contact-column">
-                    <div class="container">
+                <div class="contact-column hours-column">
+                    <div class="container" style="padding: 0; width: 100%;">
                         <h3 id="dyn-map-visit-h3">Visit Us in Brooklin</h3>
-                        <div class="map-responsive">
+
+                        <!-- Mobile-Friendly Interactive Map Card -->
+                        <a href="https://maps.google.com/?q=72+Baldwin+St,+Whitby,+ON+L1M+1A3" target="_blank"
+                            rel="noopener noreferrer" class="map-mobile-card"
+                            aria-label="Open 72 Baldwin Street in Google Maps">
+                            <div class="map-card-content">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                                <span class="map-card-title">Fiaschetteria Rosetta</span>
+                                <span class="map-card-address">72 Baldwin St, Brooklin, ON</span>
+                                <span class="map-card-btn">Open in Google Maps <i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                            </div>
+                        </a>
+
+                        <!-- Desktop iframe (hidden on mobile to prevent crashes/frown faces, fully active on desktop) -->
+                        <div class="map-responsive desktop-map-embed">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2874.156553535!2d-78.9602506!3d43.9556555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d5193498099381%3A0xe7c85616e4280d0c!2s72%20Baldwin%20St%2C%20Whitby%2C%20ON%20L1M%201A3!5e0!3m2!1sen!2sca!4v1711613400000!5m2!1sen!2sca"
-                                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
+                                title="Fiaschetteria Rosetta Location Map" width="100%" height="450" style="border:0;"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>
                     </div>
                 </div>
-                <div class="contact-column">
+                <div class="contact-column hours-column">
                     <h3 id="dyn-map-hours-h3">Hours</h3>
-                    <p id="dyn-map-hours-p"><strong>Monday</strong>: 11:30AM - 9:00PM<br><br><strong>Tuesday</strong>:
-                        11:30AM - 9:00PM<br><br><strong>Wednesday</strong>:
-                        11:30AM
-                        - 9:00PM<br><br><strong>Thursday</strong>: 11:30AM - 10:00PM<br><br><strong>Friday</strong>:
-                        11:30AM - 10:00PM<br><br><strong>Saturday</strong>:
-                        11:30AM -
-                        10:00PM<br><br><strong>Sunday</strong>: 1:00PM
-                        - 8:00PM</p>
+                    <p id="dyn-map-hours-p">
+                        <strong>Monday</strong>: 11:30AM - 9:00PM<br><br>
+                        <strong>Tuesday</strong>: 11:30AM - 9:00PM<br><br>
+                        <strong>Wednesday</strong>: 11:30AM - 9:00PM<br><br>
+                        <strong>Thursday</strong>: 11:30AM - 10:00PM<br><br>
+                        <strong>Friday</strong>: 11:30AM - 10:00PM<br><br>
+                        <strong>Saturday</strong>: 11:30AM - 10:00PM<br><br>
+                        <strong>Sunday</strong>: 1:00PM - 8:00PM
+                    </p>
                 </div>
-
             </div>
         </section>
 
-        <section id="wine-club" class="double-section">
-            <div class="double-container">
-                <div class="double-image-wrapper">
-                    <video class="double-feature-img" autoplay muted loop playsinline
-                        poster="./assets/images/rosetta-wine-club-img.jpg">
-                        <source src="./assets/video/rosetta-wineclub.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+        <section id="instagram-feed" class="double-section">
+            <div class="double-container" style="flex-direction: column; width: 100%;">
+                <div class="txt-content" style="margin-bottom: 1.5rem;">
+                    <h2 id="dyn-wine-h2">Follow Us on Instagram</h2>
+                    <p id="dyn-wine-p">Keep up with our restaurant creations and market updates.</p>
                 </div>
 
-                <div class="txt-content">
-                    <h2 id="dyn-wine-h2">Join Our Wine Club</h2>
-                    <p id="dyn-wine-p">Members will receive
-                        hand-selected
-                        bottles.</p>
-                    <a href="#map-location" class="green-btn">Coming Soon</a>
+                <div class="instagram-feed-container" style="width: 100%;">
+                    <!-- Elfsight Instagram Feed | fiaschetteriarosettafeed -->
+                    <script src="https://elfsightcdn.com/platform.js" async></script>
+                    <div class="elfsight-app-63a56509-c17e-4cb2-bf80-7d3db9b06eaf" data-elfsight-app-lazy></div>
                 </div>
-
             </div>
         </section>
 
     </main>
+
     <footer>
         <p>&copy; 2026 Fiaschetteria Rosetta. All Rights Reserved.</p>
     </footer>
 
-    <!-- <div id="email-modal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="close-modal" id="close-modal">&times;</button>
-            <div class="modal-inner">
-                <div class="modal-image-side">
-                    <img src="./assets/images/outside.jpg" alt="Wine Club">
-                </div>
-                <div class="modal-text-side">
-                    <h2 id="dyn-modal-h2">Fiaschetteria Rosetta</h2>
-                    <p id="dyn-modal-p1">
-                        Be the first to know about our special events and to join
-                        the
-                        priority
-                        waitlist for our <strong>Wine Club</strong>.
-                    </p>
-                    <form class="modal-form">
-                        <input type="email" placeholder="Your Email Address" required>
-                        <button type="submit" class="hero-btn">Stay Updated</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div> -->
 </body>
 
-</html>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'p3plzcpnl508880'},{'dcenter':'p3'},{'cp_id':'10940215'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script></html>
